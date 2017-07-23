@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>日报检测系统</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/jquery-3.2.1.min.js"></script>
+  </head>
+  <body>
+    <h1></h1>
+  
+    <input type="text" id="daily-id"/>
+    <button onclick="enterId()">确认</button>
+    <%for(var i = 0;i<title.length;i++){%>
+    <p><%= title[i] %></p>
+    <%}%>
+  </body>
+</html>
+<script>
+  function enterId(){
+    alert($('#daily-id').val())
+  }
+</script>
