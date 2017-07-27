@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%=type===0?'历史报告日志':'历史报告反馈'%></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/jquery-3.2.1.min.js"></script>
+  </head>
+  <body>
+  <h1><%=type===0?'历史报告日志':'历史报告反馈'%></h1>
+    <%for(var i=0;i<data.length;i++){%>
+      <p style="padding-left: 20px"><a href="<%if(type===0){%>/data/<%=data[i]%><%}else{%>/daily/<%=data[i]%><%}%>"><%=data[i]%></a></p>
+    <%}%>
+  </body>
+</html>
+<script>
+  function enterId(){
+    if(+$('#daily-id').val()>1){
+      window.location.href = window.location.origin +'/'+$('#daily-id').val()
+    }else{
+      alert('请输入MIND-后面的数字')
+    }
+  }
+</script>

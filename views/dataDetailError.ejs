@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>日报检测系统</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/jquery-3.2.1.min.js"></script>
+  </head>
+  <body>
+    <div>
+        <p>今日站会纪要报告已更新过了，确定要重新更新吗？</p>
+        <p><button onclick="enter()">确定</button><button onclick="history.go(-1)" style="margin-left:10px">取消</button></p>
+    </div>  
+  </body>
+</html>
+<script charset="utf-8">
+    function enter(){
+        $.post('/clearDaily',{day:<%=day%>},function(res){
+          console.log(res)    
+          if(res==1)
+            location.reload()
+          else
+            alert('失败了')
+        })
+    }
+</script>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>日报检测系统</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/jquery-3.2.1.min.js"></script>
+  </head>
+  <body>
+    <h2>用户名单</h2>
+    <%for(var i = 0;i <data.length;i++){%>
+    <p><%=data[i]%></p>
+    <%}%>
+    <h2>用户白名单</h2>
+    <%for(var i = 0;i <whiteUser.length;i++){%>
+    <p><%=whiteUser[i]%></p>
+    <%}%>
+  </body>
+</html>

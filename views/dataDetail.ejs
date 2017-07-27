@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>日志详情</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/jquery-3.2.1.min.js"></script>
+  </head>
+  <body>
+  <h1><%=title%></h1>
+  <%if(data['1']){%>
+  <h3 style="color:red">周一</h3>
+  <%for(var i=0;i<data['1'].length;i++){%>
+    <%if(type===0){%>
+      <p><%= data['1'][i]%></p>
+    <%}else{%>
+    <h5><%= data['1'][i].user%><span style="font-size: 12px;margin-left: 4px"><%= data['1'][i].date%></span></h5>
+    <p><%= data['1'][i].data%></p>
+    <%}}}%>
+
+<%if(data['2']){%>
+  <h3 style="color:red">周二</h3>
+  <%for(var i=0;i<data['2'].length;i++){%>
+    <%if(type===0){%><p><%= data['2'][i]%></p><%}else{%>
+    <h5><%= data['2'][i].user%><span style="font-size: 12px;margin-left: 4px"><%= data['2'][i].date%></span></h5>
+    <p><%= data['2'][i].data%></p>
+    <%}}}%>
+
+    <%if(data['3']){%>
+  <h3 style="color:red">周三</h3>
+  <%for(var i=0;i<data['3'].length;i++){%>
+    <%if(type===0){%><p><%= data['3'][i]%></p><%}else{%>
+    <h5><%= data['3'][i].user%><span style="font-size: 12px;margin-left: 4px"><%= data['3'][i].date%></span></h5>
+    <p><%= data['3'][i].data%></p>
+    <%}}}%>
+
+    <%if(data['4']){%>
+  <h3 style="color:red">周四</h3>
+  <%for(var i=0;i<data['4'].length;i++){%>
+    <%if(type===0){%><p><%= data['4'][i]%></p><%}else{%>
+    <h5><%= data['4'][i].user%><span style="font-size: 12px;margin-left: 4px"><%= data['4'][i].date%></span></h5>
+    <p><%= data['4'][i].data%></p>
+    <%}}}%>
+
+    <%if(data['5']){%>
+  <h3 style="color:red">周五</h3>
+  <%for(var i=0;i<data['5'].length;i++){%>
+    <%if(type===0){%><p><%= data['5'][i]%></p><%}else{%>
+    <h5><%= data['5'][i].user%><span style="font-size: 12px;margin-left: 4px"><%= data['5'][i].date%></span></h5>
+    <p><%= data['5'][i].data%></p>
+    <%}}}%>
+
+    <%if(data['6']){%>
+  <h3 style="color:red">周六</h3>
+  <%for(var i=0;i<data['6'].length;i++){%>
+    <%if(type===0){%><p><%= data['6'][i]%></p><%}else{%>
+    <h5><%= data['6'][i].user%><span style="font-size: 12px;margin-left: 4px"><%= data['6'][i].date%></span></h5>
+    <p><%= data['6'][i].data%></p>
+    <%}}}%>
+
+    <%if(data['0']){%>
+  <h3 style="color:red">周日</h3>
+  <%for(var i=0;i<data['0'].length;i++){%>
+    <%if(type===0){%><p><%= data['0'][i]%></p><%}else{%>
+    <h5><%= data['0'][i].user%><span style="font-size: 12px;margin-left: 4px"><%= data['0'][i].date%></span></h5>
+    <p><%= data['0'][i].data%></p>
+    <%}}}%>
+
+
+</body>
+</html>
+<script>
+  function enterId(){
+    if(+$('#daily-id').val()>1){
+      window.location.href = window.location.origin +'/'+$('#daily-id').val()
+    }else{
+      alert('请输入MIND-后面的数字')
+    }
+  }
+</script>

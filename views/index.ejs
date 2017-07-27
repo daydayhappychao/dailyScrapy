@@ -6,17 +6,33 @@
     <script src="/javascripts/jquery-3.2.1.min.js"></script>
   </head>
   <body>
-    <h1></h1>
-  
+  <%if(type===1){%>
+    <h1>请输入mind号</h1>
+    
     <input type="text" id="daily-id"/>
     <button onclick="enterId()">确认</button>
+    <p><a href="/data">查看历史报告日志</a></p>
+    <p><a href="/daily">查看历史报告反馈</a></p>
+    <p><a href="/user">查看成员列表</a></p>
+    <%}else{%>
+    <h1><%=time.getFullYear()%>年<%= time.getMonth()+1%>月<%= time.getDate()%>日  站会纪要报告</h1>
+    
+    
+    <%if(title.length){%>
     <%for(var i = 0;i<title.length;i++){%>
     <p><%= title[i] %></p>
     <%}%>
+    <%}else{%>
+      今天大家表现良好，没有出现任何站会纪要不合格现象
+    <%}}%>
   </body>
 </html>
 <script>
   function enterId(){
-    alert($('#daily-id').val())
+    if(+$('#daily-id').val()>1){
+      window.location.href = window.location.origin +'/'+$('#daily-id').val()
+    }else{
+      alert('请输入MIND-后面的数字')
+    }
   }
 </script>
