@@ -337,7 +337,7 @@ router.get('/:mind', function(req, res, next) {
                                     .set('Accept-Encoding', 'gzip, deflate, sdch, br')
                                     .set('Accept-Language', 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4')
                                     .set('Connection', 'keep-alive')
-                                    .set('Host', 'jira002.iwencai.com:8080')
+                                    .set('Host', '')
                                     .set('Referer', ``)
                                         .set('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; it; rv:1.8.1.11) Gecko/20071127 Firefox/2.0.0.11')
                                     .set('X-AUSERNAME', 'wangchao')
