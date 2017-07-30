@@ -222,16 +222,15 @@ router.get('/:mind', function(req, res, next) {
 
 
         // 爬取
-        var cookie = `seraph.rememberme.cookie=18403%3A17d7c8c51b2a03bb7e9befea6bfdbf39f53bbb71; atlassian.xsrf.token=BOMF-0NE2-V867-2CPI|5d4e611241150784779b47d0e65f59d82d8d0d3a|lin; gh.i=%7B%7D; JSESSIONID=AEBD4783DC3D79F8672CDF54866D8250`
+        var cookie = ``
 
-
-        request.get(`http://jira002.iwencai.com:8080/browse/MIND-${+req.params.mind}?page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel&showAll=true&_=1500860838464`)
+        request.get(``)
             .set('Accept', '*/*')
         .set('Accept-Encoding', 'gzip, deflate, sdch, br')
         .set('Accept-Language', 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4')
         .set('Connection', 'keep-alive')
-        .set('Host', 'jira002.iwencai.com:8080')
-        .set('Referer', `http://jira002.iwencai.com:8080/browse/MIND-${+req.params.mind}`)
+        .set('Host', '')
+        .set('Referer', ``)
             .set('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; it; rv:1.8.1.11) Gecko/20071127 Firefox/2.0.0.11')
         .set('Cookie', cookie).end((err, res1) => {
 
@@ -333,13 +332,13 @@ router.get('/:mind', function(req, res, next) {
                                     //提取昨日mind数据
                                 let action = () => {
                                 return new Promise(resolve => {
-                                    (item => request.get(`http://jira002.iwencai.com:8080/browse/${mind}?page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel&showAll=true&_=1500860838464`)
+                                    (item => request.get(``)
                                      .set('Accept', '*/*')
                                     .set('Accept-Encoding', 'gzip, deflate, sdch, br')
                                     .set('Accept-Language', 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4')
                                     .set('Connection', 'keep-alive')
                                     .set('Host', 'jira002.iwencai.com:8080')
-                                    .set('Referer', `http://jira002.iwencai.com:8080/browse/${mind}`)
+                                    .set('Referer', ``)
                                         .set('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; it; rv:1.8.1.11) Gecko/20071127 Firefox/2.0.0.11')
                                     .set('X-AUSERNAME', 'wangchao')
                                     .set('X-PJAX', 'true')
